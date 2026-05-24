@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Choose Timeline</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="timeline-page">
+
+    <div class="overlay"></div>
+
+    <h1 class="timeline-title">
+        Choose Your Chapter
+    </h1>
+
+    <div class="timeline-grid">
+
+        <div class="timeline-card" onclick="window.location.href='home2021.html'">
+
+            <img src="../assets/photos/2021.jpg">
+
+            <div class="card-overlay">
+                <h2>2021</h2>
+                <p>The Beginning</p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='home2022.html'">
+
+            <img src="../assets/photos/2022.jpeg">
+
+            <div class="card-overlay">
+                <h2>2022</h2>
+                <p>Lets talk more?</p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='home2023.html'">
+
+            <img src="../assets/photos/2023.jpg">
+
+            <div class="card-overlay">
+                <h2>2023</h2>
+                <p>Closer Than Ever</p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='home2024.html'">
+
+            <img src="../assets/photos/2024.jpeg">
+
+            <div class="card-overlay">
+                <h2>2024</h2>
+                <p>Distance & Destiny</p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='home2025.html'">
+
+            <img src="../assets/photos/2025.jpg">
+
+            <div class="card-overlay">
+                <h2>2025</h2>
+                <p>Golden Memories and LDR</p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='home2026.html'">
+
+            <img src="../assets/photos/2026.jpeg">
+
+            <div class="card-overlay">
+                <h2>2026</h2>
+                <p>Engaged! 💍 </p>
+            </div>
+
+        </div>
+
+        <div class="timeline-card" onclick="window.location.href='forever.html'">
+
+            <img src="../assets/photos/download.png">
+
+            <div class="card-overlay">
+                <h2>Forever ♾️</h2>
+                <p>Still Loading...</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+
+</body>
+
+</html>

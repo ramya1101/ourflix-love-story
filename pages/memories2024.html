@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OURFLIX Memories</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="gallery-page">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo"
+    onclick="window.location.href='timeline.html'">
+
+        OURFLIX
+
+    </div>
+
+    <ul>
+
+        <li onclick="window.location.href='timeline.html'">
+            Home
+        </li>
+
+        <li onclick="window.location.href='home2024.html'">
+            
+        Go back to 2024
+        </li>
+    </ul>
+
+</nav>
+
+<!-- TITLE -->
+
+<h1 class="gallery-title">
+    Video Calls
+</h1>
+
+<div class="galery-grid">
+    
+    <img src="../assets/photos/vd1.jpg">
+    <img src="../assets/photos/vd2.jpg">
+    <img src="../assets/photos/vd3.jpg">
+    <img src="../assets/photos/vd4.jpg">
+    <img src="../assets/photos/vd5.jpg">
+    <img src="../assets/photos/vd6.jpg">
+    <img src="../assets/photos/vd7.jpg">
+    <img src="../assets/photos/vd8.jpg">
+    <img src="../assets/photos/vd9.jpg">
+    <img src="../assets/photos/vd10.jpg">
+    <img src="../assets/photos/vd11.jpg">
+    <img src="../assets/photos/vd12.jpg">
+    <img src="../assets/photos/vd13.jpg">
+    <img src="../assets/photos/vd14.jpg">
+    <img src="../assets/photos/vd15.jpg">
+    <img src="../assets/photos/vd16.jpg">
+    <img src="../assets/photos/vd17.jpg">
+    <img src="../assets/photos/vd18.jpg">
+    <img src="../assets/photos/vd19.jpg">
+    <img src="../assets/photos/vd20.jpg">
+    <img src="../assets/photos/vd21.jpg">
+    <img src="../assets/photos/vd22.jpg">
+    <img src="../assets/photos/vd23.jpeg">
+    <img src="../assets/photos/vd24.jpeg">
+    <img src="../assets/photos/vd25.jpeg">
+    <img src="../assets/photos/vd26.jpeg">
+    <img src="../assets/photos/vd27.jpeg">
+    <img src="../assets/photos/vd28.jpeg">
+    <img src="../assets/photos/vd29.jpeg">
+    <img src="../assets/photos/vd30.jpeg">
+    <img src="../assets/photos/vd31.jpeg">
+    <img src="../assets/photos/vd32.jpeg">
+    <img src="../assets/photos/vd33.jpeg">
+    <img src="../assets/photos/vd34.jpeg">
+    <img src="../assets/photos/vd34.jpeg">
+
+</div>
+
+
+
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+</html>

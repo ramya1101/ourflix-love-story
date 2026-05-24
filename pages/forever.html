@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FOREVER ♾</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="forever-page">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo"
+    onclick="window.location.href='timeline.html'">
+
+        OURFLIX
+
+    </div>
+
+    <ul>
+
+        <li onclick="window.location.href='timeline.html'">
+            Home
+        </li>
+
+        <li onclick="window.location.href='home2021.html'">
+            Back To 2021
+        </li>
+        <li onclick="window.location.href='home2022.html'">
+            Back To 2022
+        </li>
+        <li onclick="window.location.href='home2023.html'">
+            Back To 2023
+        </li>
+        <li onclick="window.location.href='home2024.html'">
+            Back To 2024
+        </li>
+        <li onclick="window.location.href='home2025.html'">
+            Back To 2025
+        </li>
+        <li onclick="window.location.href='home2026.html'">
+            Back To 2026
+        </li>
+
+
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="forever-hero">
+
+    <img src="../assets/photos/forever.jpg"
+    class="forever-bg">
+
+    <div class="forever-overlay"></div>
+
+    <div class="forever-content">
+
+        <h1>
+            The Story Never Ends ♾
+        </h1>
+
+        <p>
+            Some stories are not written in years...
+            they are written in forever.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LOVE LETTER -->
+
+<section class="love-letter">
+
+    <h2>
+        A Letter To You 💌
+    </h2>
+
+    <p>
+
+        Dear Shravan,
+
+        <br><br>
+
+        If someone had told me years ago
+        that one person would slowly become
+        my comfort, my happiness,
+        and my home...
+
+        <br><br>
+
+        I wouldn't have believed them.
+
+        <br><br>
+
+        But here we are.
+
+        <br><br>
+
+        Through every smile,
+        every call,
+        every goodbye,
+        every reunion...
+
+        <br><br>
+
+        we created a story
+        that I never want to end.
+
+        <br><br>
+
+        And if I had to choose again,
+        in every universe,
+        in every lifetime...
+
+        <br><br>
+
+        I would still choose you.
+
+        <br><br>
+
+        Forever and always ♾
+
+    </p>
+
+</section>
+
+<!-- MEMORY STRIP -->
+
+<section class="forever-memories">
+
+    <h2>
+        Our Journey Together
+    </h2>
+
+    <div class="memory-strip">
+
+        <img src="../assets/photos/2021.jpg">
+        <img src="../assets/photos/2023.jpg">
+        <img src="../assets/photos/2024.jpeg">
+        <img src="../assets/photos/2025.jpg">
+        <img src="../assets/photos/2026.jpeg">
+
+    </div>
+
+</section>
+
+<!-- FUTURE SECTION -->
+
+<section class="future-section">
+
+    <h2>
+        Future Dreams ✨
+    </h2>
+
+    <div class="future-grid">
+
+        <div class="future-card">
+            More Trips Together
+        </div>
+
+        <div class="future-card">
+            More Concerts
+        </div>
+
+        <div class="future-card">
+            More Late Night Calls
+        </div>
+
+        <div class="future-card">
+            A Beautiful Future
+        </div>
+
+        <div class="future-card">
+            Growing Old Together
+        </div>
+
+        <div class="future-card">
+            Forever ♾
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FINAL QUOTE -->
+
+<section class="ending-section">
+
+    <h1>
+        Thank You For Being
+        My Favorite Story ❤️
+    </h1>
+
+</section>
+
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+
+</html>

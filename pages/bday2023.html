@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OURFLIX Memories</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="gallery-page">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo"
+    onclick="window.location.href='timeline.html'">
+
+        OURFLIX
+
+    </div>
+<ul>
+
+        <li onclick="window.location.href='timeline.html'">
+    Home
+</li>
+    
+    <li onclick="window.location.href='home2023.html'">        
+    Go back to 2023
+</li>
+
+    </ul>
+
+</nav>
+
+<!-- TITLE -->
+
+<h1 class="gallery-title">
+    Your Birthdayy!
+</h1>
+
+<div class="galery-grid">
+    
+    <img src="../assets/photos/bd1.jpg">
+    <img src="../assets/photos/bd2.jpg">
+    <img src="../assets/photos/bd3.jpg">
+    <img src="../assets/photos/bd4.jpg">
+    <img src="../assets/photos/bd5.jpg">
+    <img src="../assets/photos/bd6.jpg">
+    <img src="../assets/photos/bd7.jpg">
+    <img src="../assets/photos/bd8.jpg">
+    <img src="../assets/photos/bd9.jpg">
+    <img src="../assets/photos/bd10.jpg">
+    <img src="../assets/photos/bd11.jpg">
+    <img src="../assets/photos/bd12.jpg">
+    <img src="../assets/photos/bd13.jpg">
+    <img src="../assets/photos/bd14.jpg">
+    <img src="../assets/photos/bd15.jpg">
+    <img src="../assets/photos/bd16.jpg">
+    <img src="../assets/photos/bd17.jpg">
+    <img src="../assets/photos/bd18.jpg">
+
+
+
+</div>
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OURFLIX - 2023</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        OURFLIX
+    </div>
+
+    <ul>
+
+        <li onclick="window.location.href='timeline.html'">
+    Home
+</li>
+        
+<li onclick="window.location.href='memories2024.html'">
+    Video Calls
+</li>
+
+        
+<li onclick="window.location.href='arrival2024.html'">
+    Your Visit
+</li>
+
+
+<li onclick="window.location.href='movies2024.html'">
+    Movies watched
+</li>
+
+
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <img src="../assets/photos/ldr.jpg" class="hero-bg">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            The LDR Stage
+        </h1>
+
+        <p>
+            The year where we started understanding more!
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="play-btn">
+                ▶ Play
+            </button>
+
+            <button class="info-btn">
+                ℹ More Info
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MOVIE ROW -->
+
+<section class="movie-section">
+
+    <h2>
+        Top Memories Together
+    </h2>
+<div class="movie-row">
+
+    <div class="movie-card">
+        <img src="../assets/photos/snap.png">
+    </div>
+
+    
+    <div class="movie-card">
+        <img src="../assets/photos/insta.jpeg">
+    </div>
+
+</div>
+    
+
+</section>
+
+<!-- VIDEO PLAYER -->
+
+<div id="video-player">
+
+    <video id="memory-video" controls>
+
+        <source src="../assets/videos/ldr.mp4" type="video/mp4">
+
+    </video>
+
+    <button id="close-video">
+        ✕
+    </button>
+
+</div>
+
+<script>
+
+const playBtn = document.querySelector(".play-btn");
+
+const infoBtn = document.querySelector(".info-btn");
+
+const videoPlayer = document.getElementById("video-player");
+
+const memoryVideo = document.getElementById("memory-video");
+
+const closeVideo = document.getElementById("close-video");
+
+/* PLAY BUTTON */
+
+playBtn.addEventListener("click", () => {
+
+    videoPlayer.style.display = "flex";
+
+    memoryVideo.play();
+});
+
+/* CLOSE BUTTON */
+
+closeVideo.addEventListener("click", () => {
+
+    videoPlayer.style.display = "none";
+
+    memoryVideo.pause();
+});
+
+/* MORE INFO BUTTON */
+
+infoBtn.addEventListener("click", () => {
+
+    alert(
+        "2022 — The LDR Stage 💖\n\nThis was the year where we started understanding more, with more love and fights!!"
+    );
+});
+
+</script>
+
+
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+
+</body>
+
+</html>

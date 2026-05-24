@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OURFLIX Memories</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="gallery-page">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo"
+    onclick="window.location.href='timeline.html'">
+
+        OURFLIX
+
+    </div>
+
+    <ul>
+
+        <li onclick="window.location.href='timeline.html'">
+            Home
+        </li>
+        
+        <li onclick="window.location.href='home2026.html'">
+            
+        Go back to 2026
+        </li>
+    </ul>
+
+</nav>
+
+<!-- TITLE -->
+
+<h1 class="gallery-title">
+    Beach Diaries
+</h1>
+
+<div class="galery-grid">
+    
+    
+    <img src="../assets/photos/be1.jpg">
+    <img src="../assets/photos/be2.jpg">
+    <img src="../assets/photos/be3.jpg">
+    <img src="../assets/photos/be4.jpg">
+    <img src="../assets/photos/be5.jpg">
+    <img src="../assets/photos/be6.jpg">
+    <img src="../assets/photos/be7.jpg">
+    <img src="../assets/photos/be8.jpg">
+    <img src="../assets/photos/be9.jpg">
+    <img src="../assets/photos/be10.jpg">
+    <img src="../assets/photos/be11.jpg">
+
+    
+</div>
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+</html>

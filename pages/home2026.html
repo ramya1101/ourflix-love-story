@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OURFLIX - 2023</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        OURFLIX
+    </div>
+
+    <ul>
+
+        <li onclick="window.location.href='timeline.html'">
+    Home
+</li>
+        
+<li onclick="window.location.href='airport2026.html'">
+    Airport Scenes
+</li>
+
+
+<li onclick="window.location.href='mybday2.html'">
+    My birthday
+</li>
+
+
+<li onclick="window.location.href='beach2026.html'">
+    Beach Diaries
+</li>
+
+<li onclick="window.location.href='eng.html'">
+    Engagement
+</li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <img src="../assets/photos/2026.jpeg" class="hero-bg">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            Our Engagement
+        </h1>
+
+        <p>
+            The year where our forever begun!
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="play-btn">
+                ▶ Play
+            </button>
+
+            <button class="info-btn">
+                ℹ More Info
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MOVIE ROW -->
+
+
+<h1 class="gallery-title">
+    Some pictures taken
+</h1>
+
+<div class="galery-grid">
+    
+    <img src="../assets/photos/l1.jpg">
+    <img src="../assets/photos/l2.jpg">
+    <img src="../assets/photos/l3.jpg">
+    <img src="../assets/photos/l4.jpg">
+    <img src="../assets/photos/l5.jpg">
+    <img src="../assets/photos/l6.jpg">
+    <img src="../assets/photos/l7.jpg">
+    <img src="../assets/photos/l8.jpg">
+    <img src="../assets/photos/l9.jpg">
+    <img src="../assets/photos/l10.jpg">
+    <img src="../assets/photos/l11.jpg">
+    <img src="../assets/photos/l12.jpg">
+    <img src="../assets/photos/l13.jpg">
+    <img src="../assets/photos/l14.jpg">
+    <img src="../assets/photos/l15.jpg">
+    <img src="../assets/photos/l16.jpg">
+    <img src="../assets/photos/l17.jpg">
+    <img src="../assets/photos/l18.jpg">
+    <img src="../assets/photos/l19.jpg">
+    <img src="../assets/photos/l20.jpg">
+    <img src="../assets/photos/l21.jpg">
+    <img src="../assets/photos/l22.jpg">
+    <img src="../assets/photos/l23.jpg">
+    <img src="../assets/photos/l24.jpg">
+    <img src="../assets/photos/l25.jpg">
+    <img src="../assets/photos/l26.jpg">
+    <img src="../assets/photos/l27.jpeg">
+    <img src="../assets/photos/l28.jpeg">
+    <img src="../assets/photos/l29.jpeg">
+    <img src="../assets/photos/l30.jpeg">
+    <img src="../assets/photos/l31.jpeg">
+    <img src="../assets/photos/l32.jpeg">
+    <img src="../assets/photos/l33.jpeg">
+    <img src="../assets/photos/l34.jpeg">
+    <img src="../assets/photos/l35.jpeg">
+    <img src="../assets/photos/l36.jpeg">
+    <img src="../assets/photos/l37.jpeg">
+    <img src="../assets/photos/l38.jpeg">
+    <img src="../assets/photos/l39.jpeg">
+    <img src="../assets/photos/l40.jpeg">
+
+</div>
+
+
+
+</section>
+
+<!-- VIDEO PLAYER -->
+
+<div id="video-player">
+
+    <video id="memory-video" controls>
+
+        <source src="../assets/videos/eng.mp4" type="video/mp4">
+
+    </video>
+
+    <button id="close-video">
+        ✕
+    </button>
+
+</div>
+
+<script>
+
+const playBtn = document.querySelector(".play-btn");
+
+const infoBtn = document.querySelector(".info-btn");
+
+const videoPlayer = document.getElementById("video-player");
+
+const memoryVideo = document.getElementById("memory-video");
+
+const closeVideo = document.getElementById("close-video");
+
+/* PLAY BUTTON */
+
+playBtn.addEventListener("click", () => {
+
+    videoPlayer.style.display = "flex";
+
+    memoryVideo.play();
+});
+
+/* CLOSE BUTTON */
+
+closeVideo.addEventListener("click", () => {
+
+    videoPlayer.style.display = "none";
+
+    memoryVideo.pause();
+});
+
+/* MORE INFO BUTTON */
+
+infoBtn.addEventListener("click", () => {
+
+    alert(
+        "2022 — The Engagement 💖\n\nThis was the year where our forever begun! We got Engaged, and also Officially Married!! "
+    );
+});
+
+</script>
+
+<!-- FULLSCREEN IMAGE MODAL -->
+
+<div class="image-modal" id="imageModal">
+
+    <span class="close-modal" id="closeModal">
+        ✕
+    </span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+/* GET ELEMENTS */
+
+const modal =
+document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* SELECT ALL GALLERY IMAGES */
+
+const images =
+document.querySelectorAll(".galery-grid img");
+
+/* OPEN MODAL */
+
+images.forEach((img)=>{
+
+    img.addEventListener("click", ()=>{
+
+        modal.classList.add("active");
+
+        modalImg.src = img.src;
+    });
+
+});
+
+/* CLOSE BUTTON */
+
+closeModal.addEventListener("click", ()=>{
+
+    modal.classList.remove("active");
+});
+
+/* CLICK OUTSIDE */
+
+modal.addEventListener("click", (e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+    }
+});
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+
+</html>
