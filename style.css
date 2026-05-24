@@ -897,7 +897,6 @@ body{
 }
 
 /* OVERLAY */
-
 .forever-overlay{
 
     position:absolute;
@@ -905,13 +904,20 @@ body{
     inset:0;
 
     background:
+
     linear-gradient(
     to top,
-    black,
-    transparent,
-    rgba(0,0,0,0.5));
-}
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.3)
+    ),
 
+    linear-gradient(
+    135deg,
+    rgba(255,0,128,0.25),
+    rgba(128,0,255,0.2),
+    rgba(0,200,255,0.18)
+    );
+}
 /* CONTENT */
 
 .forever-content{
@@ -927,7 +933,7 @@ body{
 
 .forever-content h1{
 
-    font-size:90px;
+    font-size:70px;
 
     margin-bottom:20px;
 
@@ -946,14 +952,30 @@ body{
 }
 
 /* LOVE LETTER */
-
 .love-letter{
 
-    padding:120px 80px;
+    padding:100px 60px;
 
     max-width:1000px;
 
-    margin:auto;
+    margin:80px auto;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    border:
+    1px solid rgba(255,255,255,0.12);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+
+    position:relative;
+
+    z-index:5;
 }
 
 .love-letter h2{
@@ -964,18 +986,18 @@ body{
 
     text-align:center;
 }
-
 .love-letter p{
 
     font-size:24px;
 
-    line-height:2;
+    line-height:2.2;
 
-    opacity:0.9;
+    opacity:0.92;
 
     text-align:center;
-}
 
+    color:#f5f5f5;
+}
 /* MEMORY STRIP */
 
 .forever-memories{
@@ -1004,7 +1026,6 @@ body{
 }
 
 /* IMAGES */
-
 .memory-strip img{
 
     width:320px;
@@ -1013,9 +1034,12 @@ body{
 
     object-fit:cover;
 
-    border-radius:18px;
+    border-radius:24px;
 
     transition:0.4s;
+
+    border:
+    2px solid rgba(255,255,255,0.1);
 }
 
 .memory-strip img:hover{
@@ -1054,18 +1078,23 @@ body{
 }
 
 /* CARDS */
-
 .future-card{
 
-    height:220px;
+    height:240px;
 
     background:
     linear-gradient(
     145deg,
-    #111,
-    #1c1c1c);
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+    );
 
-    border-radius:20px;
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(20px);
 
     display:flex;
 
@@ -1076,11 +1105,12 @@ body{
 
     text-align:center;
 
-    padding:20px;
+    padding:25px;
 
     transition:0.4s;
-}
 
+    color:white;
+}
 .future-card:hover{
 
     transform:
@@ -1105,16 +1135,26 @@ body{
 
     padding:40px;
 }
-
 .ending-section h1{
 
-    font-size:70px;
+    font-size:82px;
 
-    max-width:900px;
+    max-width:1000px;
 
     line-height:1.4;
-}
 
+    background:
+    linear-gradient(
+    90deg,
+    #ff7eb3,
+    #c084fc,
+    #7dd3fc
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
 /* FULLSCREEN IMAGE MODAL */
 
 .image-modal{
@@ -1214,4 +1254,60 @@ body{
 
         opacity:1;
     }
+}
+
+/* FLOATING BLUR LIGHTS */
+
+.blur-circle{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:0;
+
+    opacity:0.45;
+
+    pointer-events:none;
+}
+
+/* PINK */
+
+.blur1{
+
+    width:350px;
+    height:350px;
+
+    background:#ff0080;
+
+    top:10%;
+    left:5%;
+}
+
+/* PURPLE */
+
+.blur2{
+
+    width:400px;
+    height:400px;
+
+    background:#7b2fff;
+
+    bottom:10%;
+    right:5%;
+}
+
+/* BLUE */
+
+.blur3{
+
+    width:300px;
+    height:300px;
+
+    background:#00c8ff;
+
+    top:45%;
+    left:40%;
 }
